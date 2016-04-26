@@ -1,0 +1,1 @@
+*/3 * * * * docker run datagov/catalog ckan --plugin=ckanext-harvest harvester run
