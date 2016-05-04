@@ -1,20 +1,20 @@
 # ckan --plugin=ckanext-harvest harvester run
-*/3 * * * * docker-compose run --name harvester-run app ckan --plugin=ckanext-harvest harvester run
+*/3 * * * * docker-compose run --rm  --name harvester-run app ckan --plugin=ckanext-harvest harvester run
 
 # ckan --plugin=ckanext-geodatagov geodatagov clean-deleted
-*/15 * * * * docker-compose run --name clean-deleted app ckan --plugin=ckanext-geodatagov geodatagov clean-deleted
+*/15 * * * * docker-compose run --rm --name clean-deleted app ckan --plugin=ckanext-geodatagov geodatagov clean-deleted
 
 # ckan tracking update 
-*/15 * * * * docker-compose run --name tracking-update app ckan tracking update
+*/15 * * * * docker-compose run --rm --name tracking-update app ckan tracking update
 
 # ckan --plugin=ckanext-geodatagov geodatagov export-csv 
-*/15 * * * * docker-compose run --name geodatagov-export-csv app ckan --plugin=ckanext-geodatagov geodatagov export-csv
+*/15 * * * * docker-compose run --rm --name geodatagov-export-csv app ckan --plugin=ckanext-geodatagov geodatagov export-csv
 
 # pycsw-ckan.py -c load && pycsw-db-admin.py vacuumdb
-0 4 * * * docker-compose run --name load-pycsw pycsw load-pycsw
+0 4 * * * docker-compose run --rm --name load-pycsw pycsw load-pycsw
 
 # pycsw-db-admin.py reindex_fts
-0 5 * * 0 docker-compose run --name reindex-fts pycsw reindex-fts
+0 5 * * 0 docker-compose run --rm --name reindex-fts pycsw reindex-fts
 
 # ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
-30 5 * * * docker-compose run --rm app ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
+30 5 * * * docker-compose run --rm --name harvest-job-cleanup app ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
