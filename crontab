@@ -15,3 +15,6 @@
 
 # pycsw-db-admin.py reindex_fts
 0 5 * * 0 docker-compose run --name reindex-fts pycsw reindex-fts
+
+# ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
+30 5 * * * docker-compose run --rm app ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
