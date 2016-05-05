@@ -18,3 +18,12 @@
 
 # ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
 30 5 * * * docker-compose run --rm --name harvest-job-cleanup app ckan --plugin=ckanext-geodatagov geodatagov harvest-job-cleanup
+
+# semi annunally. ckan --plugin=ckanext-qa qa collect-ids
+0 3 1 1,6 * docker-compose run --rm --name harvest-job-cleanup app ckan --plugin=ckanext-qa qa collect-ids
+
+# ckan --plugin=ckanext-qa qa update_sel
+30 1 * * * docker-compose run --rm --name harvest-job-cleanup app ckan --plugin=ckanext-qa qa update_sel
+
+# ckan --plugin=ckanext-qa qa update
+30 1 * * * docker-compose run --rm --name harvest-job-cleanup app ckan --plugin=ckanext-qa qa update
