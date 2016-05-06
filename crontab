@@ -23,14 +23,7 @@
 0 3 1 1,6 * docker-compose run --rm --name qa-collect-ids app ckan --plugin=ckanext-qa qa collect-ids
 
 # ckan --plugin=ckanext-qa qa update_sel
-31 1 * * * docker-compose run --rm --name qa_update_sel_1 app ckan --plugin=ckanext-qa qa update_sel
-32 1 * * * docker-compose run --rm --name qa_update_sel_2 app ckan --plugin=ckanext-qa qa update_sel
-33 1 * * * docker-compose run --rm --name qa_update_sel_3 app ckan --plugin=ckanext-qa qa update_sel
-34 1 * * * docker-compose run --rm --name qa_update_sel_4 app ckan --plugin=ckanext-qa qa update_sel
-35 1 * * * docker-compose run --rm --name qa_update_sel_5 app ckan --plugin=ckanext-qa qa update_sel
-36 1 * * * docker-compose run --rm --name qa_update_sel_6 app ckan --plugin=ckanext-qa qa update_sel
-37 1 * * * docker-compose run --rm --name qa_update_sel_7 app ckan --plugin=ckanext-qa qa update_sel
-38 1 * * * docker-compose run --rm --name qa_update_sel_8 app ckan --plugin=ckanext-qa qa update_sel
+30 1 * * * docker-compose run --rm --name qa_update_sel app ckan --plugin=ckanext-qa qa update_sel
 
 # ckan --plugin=ckanext-qa qa update
 31 3 * * * docker-compose run --rm --name qa_update_1 app ckan --plugin=ckanext-qa qa update
