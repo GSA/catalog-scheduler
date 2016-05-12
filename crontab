@@ -34,3 +34,6 @@
 36 3 * * * docker-compose run --rm --name qa_update_6 app ckan --plugin=ckanext-qa qa update
 37 3 * * * docker-compose run --rm --name qa_update_7 app ckan --plugin=ckanext-qa qa update
 38 3 * * * docker-compose run --rm --name qa_update_8 app ckan --plugin=ckanext-qa qa update
+
+# ckan --plugin=ckanext-geodatagov geodatagov combine-feeds
+30 4 * * * docker-compose run --rm --name combine-feeds app ckan --plugin=ckanext-geodatagov geodatagov combine-feeds
