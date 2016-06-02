@@ -16,6 +16,9 @@
 # pycsw-ckan.py -c load && pycsw-db-admin.py vacuumdb
 0 4 * * * docker-compose run --rm --name load-pycsw pycsw load-pycsw
 
+# ckan-pycsw set_keywords 
+0 7 * * * docker-compose run --rm --name set_keywords pycsw set_keywords
+
 # pycsw-db-admin.py reindex_fts
 0 5 * * 0 docker-compose run --rm --name reindex-fts pycsw reindex-fts
 
